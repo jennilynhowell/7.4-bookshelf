@@ -1,0 +1,66 @@
+h1, h3, h4, h5 {
+  font-family: 'Goudy Bookletter 1911', serif;
+}
+
+h4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.add-book {
+  margin: 0 auto;
+  width: 80vw;
+  border-top: 1px solid #414141;
+  border-bottom: 1px solid #414141;
+}
+
+.add-book form {
+  margin: 0 auto;
+  width: 70vw;
+  padding-bottom: 2%;
+}
+
+.form-control, label {
+  font-weight: 700;
+}
+
+.compl-label {
+  color: #999999;
+}
+
+input[type=checkbox] {
+  margin-right: 2%;
+}
+
+.books-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book {
+  flex: 1 1 20%;
+  text-align: center;
+  margin: 2%;
+  background-color: #fff;
+  border: 1px solid #414141;
+  padding: 3%;
+}
+
+.book-title {
+  color: #337ab7;
+}
+
+.book-info {
+  text-align: center;
+  margin: 2%;
+  background-color: #fff;
+  border: 1px solid #414141;
+  padding: 3%;
+}
+
+.book-info, .book-sum {
+  line-height: 1.7;
+}

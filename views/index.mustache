@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Bookshelf</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+  </head>
+  <body class="container bg-success">
+    <h1>Welcome to My Bookshelf!</h1>
+    <div class="add-book">
+      <h3>Add a new Book</h3>
+      <form class="form-group" action="/add" method="post">
+        <input type="text" name="title" value="" placeholder="Book Title" class="form-control">
+        <input type="text" name="author" value="" placeholder="Author's Name" class="form-control">
+        <input type="number" name="year" value="" placeholder="Year Published" class="form-control">
+        <label for="completed" class="form-control compl-label"> Completed?
+          yes <input type="checkbox" name="completed" value="true" class="check-true">
+          no <input type="checkbox" name="completed" value="false" class="">
+        </label>
+        <input type="submit" name="submitBook" value="Add Book!" class="btn btn-primary">
+      </form>
+    </div>
+
+
+    <section class="container">
+      <h3>View Books</h3>
+      <div class="books-list">
+        {{#model}}
+        <ul class="list-unstyled book">
+          <li><h4><a href="/book/{{_id}}">{{title}}</a></h4></li>
+          <li>By: {{author}}</li>
+          <li>Published: {{yearPublished}}</li>
+          <li>Completed? {{completed}}</li>
+        </ul>
+        {{/model}}
+      </div>
+
+    </section>
+  </body>
+</html>

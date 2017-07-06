@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Now viewing: {{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+  </head>
+  <body class="container bg-success">
+    <a href="/">Home</a>
+    <h1>Check out {{title}}!</h1>
+
+    <section class="container">
+      <h3>About this Book:</h3>
+      <ul class="list-unstyled book-info">
+        <li><h4 class="book-title">{{title}}</h4></li>
+        <li>By: {{author}}</li>
+        <li>Published: {{yearPublished}}</li>
+        <li>Completed? {{completed}}</li>
+      </ul>
+      {{#summary}}
+      <ul class="list-unstyled book-sum">
+        <li><h4>Summary</h4></li>
+        <li><b>Key Characters: </b>{{characters}}</li>
+        <li><b>Plot: </b>{{plot}}</li>
+        <li><b>Thoughts: </b>{{review}}</li>
+        <li><b><a href="{{shopUrl}}" target="_blank">Find it on Amazon</a></b></li>
+      {{/summary}}
+      </ul>
+    </section>
+
+    <div class="add-book">
+      <h3>Update this Book</h3>
+      <form class="form-group" action="/update/{{_id}}" method="post">
+        <input type="hidden" name="book" value="{{_id}}">
+        <label for="completed" class="form-control compl-label"> Mark Completed?
+          yes<input type="checkbox" name="completed" value="true" class="">
+        </label>
+        <input type="text" name="characters" value="" placeholder="List Key Characters" class="form-control">
+        <input type="text" name="plot" value="" placeholder="Basic Plot" class="form-control">
+        <textarea name="review" rows="8" cols="80" placeholder="Your thoughts?" class="form-control"></textarea>
+        <input type="url" name="url" value="" placeholder="Amazon URL" class="form-control">
+        <input type="submit" name="submitBook" value="Update Book!" class="btn btn-primary">
+      </form>
+
+      <form class="" action="/delete/{{_id}}" method="post">
+        <input type="hidden" name="book" value="{{_id}}">
+        <input type="submit" name="delete" value="Delete Book" class="btn btn-danger">
+      </form>
+    </div>
+
+
+
+  </body>
+</html>

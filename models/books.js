@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bookSchema = new mongoose.Schema({
   title: {type: String, required: true},
   author: {type: String, required: true},
-  yearPublished: {type: Date, required: true},
+  yearPublished: {type: Number, required: true},
   completed: {type: Boolean},
   summary: {
     plot: {type: String},
@@ -12,6 +12,6 @@ const bookSchema = new mongoose.Schema({
   }
 });
 
-const Books = mongoose.model('Books', bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
-module.exports = Books;
+module.exports = Book;
